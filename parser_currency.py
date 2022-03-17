@@ -9,7 +9,7 @@ Headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 
 
 def check_currency_lira():
-    return str(float(get_currency_price_lira().replace(",", "."))) + " рублей"
+    return "1 Турецкая лира = " + str(float(get_currency_price_lira().replace(",", "."))) + " рубля(ей)"
 
 
 def get_currency_price_lira():
@@ -23,7 +23,7 @@ def get_currency_price_lira():
 
 
 def check_currency_euro():
-    return str(float(get_currency_price_euro().replace(",", "."))) + " рублей"
+    return "1 Евро = " + str(float(get_currency_price_euro().replace(",", "."))) + " рубля(ей)"
 
 
 def get_currency_price_euro():
@@ -37,7 +37,7 @@ def get_currency_price_euro():
 
 
 def check_currency_dollar():
-    return str(float(get_currency_price_dollar().replace(",", "."))) + " рублей"
+    return "1 Американский доллар = " + str(float(get_currency_price_euro().replace(",", "."))) + " рубля(ей)"
 
 
 def get_currency_price_dollar():
