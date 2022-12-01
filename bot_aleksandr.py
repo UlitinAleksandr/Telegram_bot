@@ -4,17 +4,18 @@ from telebot import types
 
 bot = telebot.TeleBot("5103795659:AAFruz4cZExRCRSnvg9mQObTTfcUQEAOHuk")
 
+
 @bot.message_handler(content_types=["text"])
 def get_text_message(message):
 
     keyboard = types.InlineKeyboardMarkup()
-    key_lira = types.InlineKeyboardButton(text="Turkish lira", callback_data="lira")
+    key_lira = types.InlineKeyboardButton(text="Турецкая Лира", callback_data="lira")
     keyboard.add(key_lira)
-    key_dollar = types.InlineKeyboardButton(text="American dollar", callback_data="dollar")
+    key_dollar = types.InlineKeyboardButton(text="Американский доллар", callback_data="dollar")
     keyboard.add(key_dollar)
-    key_euro = types.InlineKeyboardButton(text="Euro", callback_data="euro")
+    key_euro = types.InlineKeyboardButton(text="Евро", callback_data="euro")
     keyboard.add(key_euro)
-    bot.send_message(message.from_user.id, text="Choose currency", reply_markup=keyboard)
+    bot.send_message(message.from_user.id, text="Выберите валюту", reply_markup=keyboard)
 
     @bot.callback_query_handler(func=lambda call: True)
     def callback_worker(call):
